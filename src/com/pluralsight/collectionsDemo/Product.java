@@ -1,5 +1,7 @@
 package com.pluralsight.collectionsDemo;
 
+import java.util.Comparator;
+
 public class Product {
 
     public String getName() {
@@ -34,4 +36,11 @@ public class Product {
         this.cost = cost;
     }
 
+    @Override
+    public String toString() {
+        String displayProduct = this.name + " : "+ this.cost;
+        return displayProduct;
+    }
+
+    public static final Comparator<Product> BY_COST = Comparator.comparingDouble(Product::getCost);
 }
